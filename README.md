@@ -12,8 +12,17 @@ General Docker instillation documentation can be found here - https://docs.docke
 * Mac, no idea. consult the official docs :)
 
 
-# Build
+# Using Docker
 
-* change into the application directory
-* To build, run `docker build -t docker-express . `. This pulls down the base docker image
-* To launch the app inside the container, run `docker run -it --rm --name my-running-app docker-express`
+* Build: `docker built -t <image-name> <location>`
+* Run: `docker run -name <container-name> -p 80:3000 <image-name> <command>`
+* Run with mountpoint: `docker run -v <host-folder>:<container-mountpoint> --name <container-name> -d -p 80:3000 <image-name>`
+
+* exec inside container: `docker exec <image_id> node ./bin/www`
+* attatch to container: `docker exec -ti <image_id> /bin/bash`
+
+* List images: `docker images`
+* List containers: `docker ps` or `docker ps -a`
+
+
+
